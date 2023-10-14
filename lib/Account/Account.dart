@@ -38,19 +38,19 @@ class _AccountState extends State<Account> {
                        children: [
                          ProfilContainer(
                            width: 280,
-                           height: 100,
+                           height: 70,
                            child: RegisteAndSignin(),
                          ),
-                         const SizedBox(height: 20,),
+                         const SizedBox(height: 10,),
                          ProfilContainer(
                            width: 280,
                            height: 80,
                            child: UserSection(),
                          ),
-                         const SizedBox(height: 20,),
+                         const SizedBox(height: 10,),
                          InkWell(
                            child: const ProfilContainer(width: 280,
-                               height: 60,
+                               height: 50,
                               child: Row(
                                 children: [
                                   Padding(
@@ -58,7 +58,7 @@ class _AccountState extends State<Account> {
                                     child: Icon( Icons.sports_esports,size: 35,),
                                   ),
                                   SizedBox(width: 20,),
-                                  Text('Coupon Lounge',style: TextStyle(fontSize: 20),),
+                                  Text('Coupon Lounge',style: TextStyle(fontSize: 15),),
                                   SizedBox(width: 30,),
                                   Icon(Icons.chevron_right_outlined,color: Colors.deepPurple,)
 
@@ -68,62 +68,32 @@ class _AccountState extends State<Account> {
                            ),
                            onTap:(){ Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));}
                          ),
-                         const SizedBox(height: 20,),
+                         const SizedBox(height: 10,),
                          const ProfilContainer(
                              width: 280,
-                             height: 200,
+                             height: 140,
                              child: Column(
                                // mainAxisAlignment: MainAxisAlignment.s,
                                children: [
                                  SizedBox(height: 10,),
                                  Text('My Trips',style: TextStyle(fontWeight: FontWeight.w600),),
-                                 SizedBox(height: 20,),
-                                 ProfilContainer(
-                                   width: 260,
-                                   height: 60,
-                                   colors: Colors.deepPurple,
-                                   child: Center(child: Text("View/Manage Trip",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
-                                 ),
                                  SizedBox(height: 10,),
                                  ProfilContainer(
                                    width: 260,
-                                   height: 60,
+                                   height: 40,
+                                   colors: Colors.deepPurple,
+                                   child: Center(child: Text("View/Manage Trip",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
+                                 ),
+                                 SizedBox(height: 5,),
+                                 ProfilContainer(
+                                   width: 260,
+                                   height: 40,
                                    colors: Colors.deepPurple,
                                    child: Center(child: Text("Wishlist",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
 
                                  ),
-                                 SizedBox(height: 20,),
-                                 ProfilContainer(
-                                   width: 280,
-                                   height: 200,
-                                   child: Column(
-                                     children: [
-                                       SizedBox(height: 10,),
-                                       Text('My Trips',style: TextStyle(fontWeight: FontWeight.w600),),
-                                       SizedBox(height: 20,),
-                                   ProfilContainer(
-                                     width: 260,
-                                     height: 60,
-                                     colors: Colors.deepPurple,
-                                     child: Center(child: Text("View/Manage Trip",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
-                                   ),
-                                   SizedBox(height: 10,),
-                                   ProfilContainer(
-                                     width: 260,
-                                     height: 60,
-                                     colors: Colors.deepPurple,
-                                     child: Center(child: Text("Wishlist",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
-                                   ),
-                                       ProfilContainer(
-                                         width: 260,
-                                         height: 60,
-                                         colors: Colors.deepPurple,
-                                         child: Center(child: Text("View/Manage Trip",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
-                                       ),
-                                       SizedBox(height: 10,),
-                                     ],
-                                   ),
-                                 ),
+
+
 
 
                                ],
