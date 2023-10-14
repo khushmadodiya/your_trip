@@ -12,6 +12,7 @@ import 'package:temp/Train/TrainHomepage.dart';
 import 'package:temp/flite/fliteHomepage.dart';
 import 'package:temp/hotels/hotelsHomepage.dart';
 import 'package:temp/theme.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'Cab/cabHomepage.dart';
 import 'MainScreen/BottomBar.dart';
 import 'MainScreen/CusttomButton.dart';
@@ -177,8 +178,37 @@ class Screen2  extends StatelessWidget{
 
   }
 }
-class Screen1 extends StatelessWidget{
+class Screen1 extends StatefulWidget{
   @override
+  State<Screen1> createState() => _Screen1State();
+}
+
+class _Screen1State extends State<Screen1> {
+  var videourl = "https://youtu.be/x_q0KIpIllE?si=g0hOL76DJcqYPn4o";
+
+  late YoutubePlayerController _controller;
+
+   @override
+  void initState() {
+    final videoId = YoutubePlayer.convertUrlToId(videourl);
+    _controller = YoutubePlayerController(
+      initialVideoId: videoId!,
+      flags: const YoutubePlayerFlags(
+        hideControls: true,
+        controlsVisibleAtStart: false,
+        autoPlay: true,
+        mute: true,
+        // isLive :true,
+        hideThumbnail: false,
+        disableDragSeek: false,
+        loop: true,
+        startAt: 4
+      ),
+
+
+    );
+  }
+
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
@@ -187,97 +217,102 @@ class Screen1 extends StatelessWidget{
       height: double.infinity,
       child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white70,
-                  ),
-                  height: 250,
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white70,
                 ),
-                const SizedBox(
-                  height: 10,
+                height: 250,
+                child: YoutubePlayer(
+                  controller: _controller,
+                  showVideoProgressIndicator: true,
+
+                  aspectRatio: 16/10,
+
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white70,
-                  ),
-                  height: 180,
-                  child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: GridView.count(
-                          crossAxisCount: 4,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 5,
-                          children: [
-                            CustomIconButton(
-                              text: 'Hotel',
-                              iconData: Icons.hotel_class,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>hotel()));
-                              },
-                            ),
-                            CustomIconButton(
-                              text: 'Flight',
-                              iconData: Icons.flight_outlined,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Flite()));
-                              },
-                            ),
-                            CustomIconButton(
-                              text: 'Train',
-                              iconData: Icons.train_sharp,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Train()));
-                              },
-                            ),
-                            CustomIconButton(
-                              text: 'Bus',
-                              iconData: Icons.directions_bus_outlined,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Buses()));
-                              },
-                            ),
-                            CustomIconButton(
-                              text: 'Cab',
-                              iconData: Icons.car_rental,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Cab()));
-                              },
-                            ),
-                            CustomIconButton(
-                              text: 'Bike Rental',
-                              iconData: Icons.motorcycle,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>BikeRental()));
-                              },
-                            ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
 
-                            CustomIconButton(
-                              text: 'Homestays',
-                              iconData: Icons.home,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeStays()));
-                              },
-                            ),
-                            CustomIconButton(
-                              text: 'Map',
-                              iconData: Icons.map,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MapPage()));
-                              },
-                            ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white70,
+                ),
+                height: 180,
+                child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GridView.count(
+                        crossAxisCount: 4,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 5,
+                        children: [
+                          CustomIconButton(
+                            text: 'Hotel',
+                            iconData: Icons.hotel_class,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>hotel()));
+                            },
+                          ),
+                          CustomIconButton(
+                            text: 'Flight',
+                            iconData: Icons.flight_outlined,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Flite()));
+                            },
+                          ),
+                          CustomIconButton(
+                            text: 'Train',
+                            iconData: Icons.train_sharp,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Train()));
+                            },
+                          ),
+                          CustomIconButton(
+                            text: 'Bus',
+                            iconData: Icons.directions_bus_outlined,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Buses()));
+                            },
+                          ),
+                          CustomIconButton(
+                            text: 'Cab',
+                            iconData: Icons.car_rental,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Cab()));
+                            },
+                          ),
+                          CustomIconButton(
+                            text: 'Bike Rental',
+                            iconData: Icons.motorcycle,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>BikeRental()));
+                            },
+                          ),
 
-                          ]
-                      )
-                  ),
-                )
-              ],
-            ),
+                          CustomIconButton(
+                            text: 'Homestays',
+                            iconData: Icons.home,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeStays()));
+                            },
+                          ),
+                          CustomIconButton(
+                            text: 'Map',
+                            iconData: Icons.map,
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>MapPage()));
+                            },
+                          ),
+
+                        ]
+                    )
+                ),
+              )
+            ],
           )),
     );
   }
