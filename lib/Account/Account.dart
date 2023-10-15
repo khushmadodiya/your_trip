@@ -71,7 +71,7 @@ class _AccountState extends State<Account> {
                          const SizedBox(height: 10,),
                          const ProfilContainer(
                              width: 280,
-                             height: 140,
+                             height: 130,
                              child: Column(
                                // mainAxisAlignment: MainAxisAlignment.s,
                                children: [
@@ -80,25 +80,83 @@ class _AccountState extends State<Account> {
                                  SizedBox(height: 10,),
                                  ProfilContainer(
                                    width: 260,
-                                   height: 40,
+                                   height: 35,
                                    colors: Colors.deepPurple,
-                                   child: Center(child: Text("View/Manage Trip",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
+                                   child: Center(child: Text("View/Manage Trip",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400),)),
                                  ),
                                  SizedBox(height: 5,),
                                  ProfilContainer(
                                    width: 260,
-                                   height: 40,
+                                   height: 35,
                                    colors: Colors.deepPurple,
-                                   child: Center(child: Text("Wishlist",style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w600),)),
+                                   child: Center(child: Text("Wishlist",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400),)),
 
                                  ),
-
-
-
-
                                ],
                              ),
-                         )
+                         ),
+                         SizedBox(height: 10,),
+                         const ProfilContainer(
+                           width: 280,
+                           height: 170,
+                           child: Column(
+                             // mainAxisAlignment: MainAxisAlignment.s,
+                             children: [
+                               SizedBox(height: 10,),
+                               Text('Rewards',style: TextStyle(fontWeight: FontWeight.w600),),
+                               SizedBox(height: 10,),
+                               ProfilContainer(
+                                 width: 260,
+                                 height: 35,
+                                 colors: Colors.deepPurple,
+                                 child: Center(child: Text("Gift Cards",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400),)),
+                               ),
+                               SizedBox(height: 5,),
+                               ProfilContainer(
+                                 width: 260,
+                                 height: 35,
+                                 colors: Colors.deepPurple,
+                                 child: Center(child: Text("Rwards",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400),)),
+
+                               ),
+                               SizedBox(height: 5,),
+                               ProfilContainer(
+                                 width: 260,
+                                 height: 35,
+                                 colors: Colors.deepPurple,
+                                 child: Center(child: Text("Refer & Earn",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400),)),
+
+                               ),
+                             ],
+                           ),
+                         ),
+                         const SizedBox(height: 10,),
+                         const ProfilContainer(
+                           width: 280,
+                           height: 130,
+                           child: Column(
+                             // mainAxisAlignment: MainAxisAlignment.s,
+                             children: [
+                               SizedBox(height: 10,),
+                               Text('Setting',style: TextStyle(fontWeight: FontWeight.w600),),
+                               SizedBox(height: 10,),
+                               ProfilContainer(
+                                 width: 260,
+                                 height: 35,
+                                 colors: Colors.deepPurple,
+                                 child: Center(child: Text("Language",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400),)),
+                               ),
+                               SizedBox(height: 5,),
+                               ProfilContainer(
+                                 width: 260,
+                                 height: 35,
+                                 colors: Colors.deepPurple,
+                                 child: Center(child: Text("Country",style: TextStyle(fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400),)),
+
+                               ),
+                             ],
+                           ),
+                         ),
 
 
                        ],
