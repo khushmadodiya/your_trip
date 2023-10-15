@@ -184,6 +184,8 @@ class Screen1 extends StatefulWidget{
 }
 
 class _Screen1State extends State<Screen1> {
+late MediaQueryData mediaQueryData = MediaQuery.of(context);
+
   var videourl = "https://youtu.be/x_q0KIpIllE?si=g0hOL76DJcqYPn4o";
 
   late YoutubePlayerController _controller;
@@ -196,7 +198,7 @@ class _Screen1State extends State<Screen1> {
       flags: const YoutubePlayerFlags(
         hideControls: true,
         controlsVisibleAtStart: false,
-        autoPlay: true,
+        autoPlay: false,
         mute: true,
         // isLive :true,
         hideThumbnail: false,
@@ -236,7 +238,62 @@ class _Screen1State extends State<Screen1> {
               const SizedBox(
                 height: 10,
               ),
-
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white70,
+                ),
+                height: 90,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: GridView.count(
+                    crossAxisCount: 4,
+                    // mainAxisSpacing: 50,
+                    crossAxisSpacing: 5,
+                    children: [
+                      CustomIconButton(
+                        text: 'Hotel',
+                        iconData: Icons.hotel_class,
+                        Iconcolor: Colors.deepPurple,
+                        Containercolor: bgcolorScreen,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>hotel()));
+                        },
+                      ),
+                      CustomIconButton(
+                        text: 'Flight',
+                        Iconcolor: Colors.deepPurple,
+                        Containercolor:bgcolorScreen,
+                        iconData: Icons.flight_outlined,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Flite()));
+                        },
+                      ),
+                      CustomIconButton(
+                        Iconcolor: Colors.deepPurple,
+                        Containercolor: bgcolorScreen,
+                        text: 'Train',
+                        iconData: Icons.train_sharp,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Train()));
+                        },
+                      ),
+                      CustomIconButton(
+                        Iconcolor: Colors.deepPurple,
+                        Containercolor:bgcolorScreen,
+                        text: 'Bus',
+                        iconData: Icons.directions_bus_outlined,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Buses()));
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -251,6 +308,8 @@ class _Screen1State extends State<Screen1> {
                         crossAxisSpacing: 5,
                         children: [
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Hotel',
                             iconData: Icons.hotel_class,
                             onPressed: () {
@@ -258,6 +317,8 @@ class _Screen1State extends State<Screen1> {
                             },
                           ),
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Flight',
                             iconData: Icons.flight_outlined,
                             onPressed: () {
@@ -265,6 +326,8 @@ class _Screen1State extends State<Screen1> {
                             },
                           ),
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Train',
                             iconData: Icons.train_sharp,
                             onPressed: () {
@@ -272,6 +335,8 @@ class _Screen1State extends State<Screen1> {
                             },
                           ),
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Bus',
                             iconData: Icons.directions_bus_outlined,
                             onPressed: () {
@@ -279,6 +344,8 @@ class _Screen1State extends State<Screen1> {
                             },
                           ),
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Cab',
                             iconData: Icons.car_rental,
                             onPressed: () {
@@ -286,6 +353,8 @@ class _Screen1State extends State<Screen1> {
                             },
                           ),
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Bike Rental',
                             iconData: Icons.motorcycle,
                             onPressed: () {
@@ -294,6 +363,8 @@ class _Screen1State extends State<Screen1> {
                           ),
 
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Homestays',
                             iconData: Icons.home,
                             onPressed: () {
@@ -301,6 +372,8 @@ class _Screen1State extends State<Screen1> {
                             },
                           ),
                           CustomIconButton(
+                            Iconcolor:Colors.white ,
+                            Containercolor: Colors.deepPurple,
                             text: 'Map',
                             iconData: Icons.map,
                             onPressed: () {

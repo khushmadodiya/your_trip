@@ -5,12 +5,16 @@ import 'package:temp/theme.dart';
 class CustomIconButton extends StatefulWidget {
   final String text;
   final IconData iconData;
+  Color? Iconcolor = Colors.white;
+  Color? Containercolor= Colors.deepPurple;
   void  Function() onPressed;
 
   CustomIconButton({
     required this.text,
     required this.iconData,
     required this.onPressed,
+    this.Iconcolor,
+    this.Containercolor,
   });
 
   @override
@@ -30,7 +34,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
           Container(
             decoration: BoxDecoration(
               border: Border.all(),
-              color: Colors.deepPurple,
+              color: widget.Containercolor,
               borderRadius: BorderRadius.circular(10.0),
 
             ),
@@ -38,7 +42,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
             height: 50,
             child: IconButton(
               icon: Center(child: Icon(widget.iconData)),
-              color: Colors.white,
+              color: widget.Iconcolor,
               iconSize: 30,
               onPressed: widget.onPressed,
             ),
