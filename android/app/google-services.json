@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "830682312188",
-    "project_id": "your-trip-586b7",
-    "storage_bucket": "your-trip-586b7.appspot.com"
+    "project_number": "205084074085",
+    "firebase_url": "https://your-ride-8257f-default-rtdb.firebaseio.com",
+    "project_id": "your-ride-8257f",
+    "storage_bucket": "your-ride-8257f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:830682312188:android:d91053e5859b22f2d99679",
+        "mobilesdk_app_id": "1:205084074085:android:df6a87f3439931fe14268c",
         "android_client_info": {
           "package_name": "com.example.temp"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDuVbCT_jG2e9a4g-syb6oT1azX0-tpSQI"
+          "current_key": "AIzaSyDUkiW0-_bLZeLbO5DflaBVOxUBzqVQsOI"
         }
       ],
       "services": {

@@ -156,7 +156,7 @@ class Screen3  extends StatelessWidget{
     // TODO: implement build
     return  Container(
       color: bgcolorScreen,
-      child: Image.asset('assets/images/khush.JPG'),
+      // child: Image.asset('assets/images/khush.JPG'),
     );
   }
 }
@@ -168,11 +168,11 @@ class Screen2  extends StatelessWidget{
        height: 10,
       width: 10,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/baby.jpeg'),
-           // Adjust the fit as needed
-          opacity:  10.0,
-        ),
+        // image: DecorationImage(
+        //   // image: AssetImage('assets/images/baby.jpeg'),
+        //    // Adjust the fit as needed
+        //   opacity:  10.0,
+        // ),
       ),
     );
 
@@ -301,7 +301,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                 ),
                 height: 180,
                 child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: GridView.count(
                         crossAxisCount: 4,
                         mainAxisSpacing: 10,
@@ -375,7 +375,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                             Iconcolor:Colors.white ,
                             Containercolor: Colors.deepPurple,
                             text: 'Map',
-                            iconData: Icons.map,
+                            iconData: Icons.location_on_outlined,
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>MapPage()));
                             },
