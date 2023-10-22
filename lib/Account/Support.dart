@@ -9,6 +9,7 @@ class Support extends StatefulWidget{
 class _SupportState extends State<Support> {
   @override
   Widget build(BuildContext context) {
+    bool darkTheme = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return  Padding(
       padding: const EdgeInsets.all(4.0),
       child: Container(
@@ -26,12 +27,12 @@ class _SupportState extends State<Support> {
                   child: Icon(
                     Icons.message, // Replace with your desired icon
                     size: 30, // Adjust the icon size as needed
-                    color: Colors.black87, // Icon color
+                    color:  darkTheme ? Colors.amber.shade400:Colors.black, // Icon color
                   ),
 
                 ),
                 SizedBox(height: 1,),
-                Text('Support'),
+                Text('Support',style: TextStyle(fontSize: 12,color:Colors.black,),),
               ],
             ),
 

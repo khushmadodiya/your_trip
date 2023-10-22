@@ -18,6 +18,7 @@ class ProfilContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool darkTheme = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Container(
       height: height,
       width: width,

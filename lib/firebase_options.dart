@@ -44,42 +44,42 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBjabS09a48pYfHUGsTTYPMdzeKrKdVvsM',
-    appId: '1:205084074085:web:754851bc7efcbf0f14268c',
-    messagingSenderId: '205084074085',
-    projectId: 'your-ride-8257f',
-    authDomain: 'your-ride-8257f.firebaseapp.com',
-    databaseURL: 'https://your-ride-8257f-default-rtdb.firebaseio.com',
-    storageBucket: 'your-ride-8257f.appspot.com',
-    measurementId: 'G-4L5DPVFW94',
+    apiKey: 'AIzaSyBZufFs-LZ1gd_OkJoH7sXLUBgP5KP0FYk',
+    appId: '1:830682312188:web:862912ac9f7ed5ecd99679',
+    messagingSenderId: '830682312188',
+    projectId: 'your-trip-586b7',
+    authDomain: 'your-trip-586b7.firebaseapp.com',
+    databaseURL: 'https://your-trip-586b7-default-rtdb.firebaseio.com',
+    storageBucket: 'your-trip-586b7.appspot.com',
+    measurementId: 'G-96HCK3MN8Z',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDUkiW0-_bLZeLbO5DflaBVOxUBzqVQsOI',
-    appId: '1:205084074085:android:df6a87f3439931fe14268c',
-    messagingSenderId: '205084074085',
-    projectId: 'your-ride-8257f',
-    databaseURL: 'https://your-ride-8257f-default-rtdb.firebaseio.com',
-    storageBucket: 'your-ride-8257f.appspot.com',
+    apiKey: 'AIzaSyDuVbCT_jG2e9a4g-syb6oT1azX0-tpSQI',
+    appId: '1:830682312188:android:be710df0b000982ad99679',
+    messagingSenderId: '830682312188',
+    projectId: 'your-trip-586b7',
+    databaseURL: 'https://your-trip-586b7-default-rtdb.firebaseio.com',
+    storageBucket: 'your-trip-586b7.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD_gK8HX3mTKL-QedqxmvOvIQ21oWsYjh8',
-    appId: '1:205084074085:ios:74c8fd39649f5ebd14268c',
-    messagingSenderId: '205084074085',
-    projectId: 'your-ride-8257f',
-    databaseURL: 'https://your-ride-8257f-default-rtdb.firebaseio.com',
-    storageBucket: 'your-ride-8257f.appspot.com',
+    apiKey: 'AIzaSyDxOhpPnsSGJfw97SYtkltTvFyStdGPFcg',
+    appId: '1:830682312188:ios:df091874a03d4ecad99679',
+    messagingSenderId: '830682312188',
+    projectId: 'your-trip-586b7',
+    databaseURL: 'https://your-trip-586b7-default-rtdb.firebaseio.com',
+    storageBucket: 'your-trip-586b7.appspot.com',
     iosBundleId: 'com.example.temp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD_gK8HX3mTKL-QedqxmvOvIQ21oWsYjh8',
-    appId: '1:205084074085:ios:58ba34cfdebb8c7114268c',
-    messagingSenderId: '205084074085',
-    projectId: 'your-ride-8257f',
-    databaseURL: 'https://your-ride-8257f-default-rtdb.firebaseio.com',
-    storageBucket: 'your-ride-8257f.appspot.com',
+    apiKey: 'AIzaSyDxOhpPnsSGJfw97SYtkltTvFyStdGPFcg',
+    appId: '1:830682312188:ios:0b6093b60da167b5d99679',
+    messagingSenderId: '830682312188',
+    projectId: 'your-trip-586b7',
+    databaseURL: 'https://your-trip-586b7-default-rtdb.firebaseio.com',
+    storageBucket: 'your-trip-586b7.appspot.com',
     iosBundleId: 'com.example.temp.RunnerTests',
   );
 }

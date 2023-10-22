@@ -9,12 +9,13 @@ class MyAccount extends StatefulWidget{
 class _MyAccountState extends State<MyAccount> {
   @override
   Widget build(BuildContext context) {
+    bool darkTheme = MediaQuery.of(context).platformBrightness == Brightness.dark;
     // TODO: implement build
     return  Padding(
       padding: const EdgeInsets.all(4.0),
       child: Container(
         height: 70,
-        width: 80,
+        width: 60,
         child: InkWell(
           child: Padding(
             padding: const EdgeInsets.all(3.0),
@@ -27,12 +28,12 @@ class _MyAccountState extends State<MyAccount> {
                   child: Icon(
                     Icons.person, // Replace with your desired icon
                     size: 40, // Adjust the icon size as needed
-                    color: Colors.black, // Icon color
+                    color: darkTheme ? Colors.amber.shade400:Colors.black, // Icon color
                   ),
 
                 ),
                 SizedBox(height: 1,),
-                Text('Account'),
+                Text('Account',style: TextStyle(fontSize: 12, color:Colors.black,),),
               ],
             ),
           ),

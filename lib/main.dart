@@ -3,17 +3,17 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:temp/Account/Account.dart';
-import 'package:temp/BikeRental/BikeRentalHomepage.dart';
-import 'package:temp/Buses/BusHomepage.dart';
-import 'package:temp/HomeStays/HomestaysHomepage.dart';
+import 'package:temp/MainScreen/splesh_screen.dart';
 import 'package:temp/Map/MapHomepage.dart';
-import 'package:temp/Profile/profile.dart';
-import 'package:temp/Train/TrainHomepage.dart';
-import 'package:temp/flite/fliteHomepage.dart';
-import 'package:temp/hotels/hotelsHomepage.dart';
 import 'package:temp/theme.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'Cab/cabHomepage.dart';
+import 'Booking/BikeRental/BikeRentalHomepage.dart';
+import 'Booking/Buses/BusHomepage.dart';
+import 'Booking/Cab/cabHomepage.dart';
+import 'Booking/HomeStays/HomestaysHomepage.dart';
+import 'Booking/Train/TrainHomepage.dart';
+import 'Booking/flite/fliteHomepage.dart';
+import 'Booking/hotels/hotelsHomepage.dart';
 import 'MainScreen/BottomBar.dart';
 import 'MainScreen/CusttomButton.dart';
 import 'firebase_options.dart';
@@ -41,25 +41,25 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      themeMode: ThemeMode.system,
+      theme: mytheme.lightTheme,
+      darkTheme: mytheme.darkTheme,
       debugShowCheckedModeBanner: false,
-      theme:
-      ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        primarySwatch: Colors.deepPurple,
-        useMaterial3: true,
-        appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(color: Colors.white),
-          color: Colors.deepPurple,
-          foregroundColor: Colors.white,
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.light,
-          ),
-        ),
-
-      ),
-    home: MyHomePage(),
+      // theme:
+      // ThemeData(
+      //   appBarTheme: const AppBarTheme(
+      //     iconTheme: IconThemeData(color: Colors.white),
+      //     color: Colors.deepPurple,
+      //     foregroundColor: Colors.white,
+      //     systemOverlayStyle: SystemUiOverlayStyle(
+      //       statusBarColor: Colors.white,
+      //       statusBarIconBrightness: Brightness.dark,
+      //       statusBarBrightness: Brightness.light,
+      //     ),
+      //   ),
+      //
+      // ),
+    home: splesh(),
     );
   }
 }
@@ -70,6 +70,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   BoxDecoration box = BoxDecoration(
     borderRadius: BorderRadius.circular(10),
     color: Colors.green,
@@ -92,18 +93,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    bool darkTheme = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
 
 
         appBar: AppBar(
-        backgroundColor:Colors.deepPurple,
+        backgroundColor:darkTheme ? Colors.amber.shade400 : Colors.blue,
         title: Text("Your Trip"),
         leading:  Padding(
           padding: EdgeInsets.all(8.0),
           child: InkWell(
             child: CircleAvatar(
                // backgroundImage:NetworkImage('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.veryicon.com%2Ficons%2Finternet--web%2F55-common-web-icons%2Fperson-4.html&psig=AOvVaw2pqgwRplozF4WeDCmfRHpH&ust=1696162446868000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNjDzdSn0oEDFQAAAAAdAAAAABAE'), // Replace with your user's profile image
-             backgroundImage: AssetImage('assets/images/p.png'),
+             backgroundImage: darkTheme ?  AssetImage('assets/images/img.png'): AssetImage('assets/images/p.png'),
               radius: 20, // Adjust the radius as needed
 
             ),
@@ -212,6 +214,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
   }
 
   Widget build(BuildContext context) {
+    bool darkTheme = MediaQuery.of(context).platformBrightness == Brightness.dark;
     // TODO: implement build
     return Container(
       color: bgcolorScreen,
@@ -224,7 +227,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.white70,
+                  color: darkTheme? Colors.black87:Colors.white70,
                 ),
                 height: 250,
                 child: YoutubePlayer(
@@ -241,7 +244,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.white70,
+                  color: darkTheme? Colors.black87:Colors.white70,
                 ),
                 height: 90,
                 child: Padding(
@@ -254,7 +257,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                       CustomIconButton(
                         text: 'Hotel',
                         iconData: Icons.hotel_class,
-                        Iconcolor: Colors.deepPurple,
+                        Iconcolor: darkTheme? Colors.amber.shade400:Colors.blue,
                         Containercolor: bgcolorScreen,
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>hotel()));
@@ -262,7 +265,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                       ),
                       CustomIconButton(
                         text: 'Flight',
-                        Iconcolor: Colors.deepPurple,
+                        Iconcolor: darkTheme? Colors.amber.shade400:Colors.blue,
                         Containercolor:bgcolorScreen,
                         iconData: Icons.flight_outlined,
                         onPressed: () {
@@ -270,7 +273,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                         },
                       ),
                       CustomIconButton(
-                        Iconcolor: Colors.deepPurple,
+                        Iconcolor: darkTheme? Colors.amber.shade400:Colors.blue,
                         Containercolor: bgcolorScreen,
                         text: 'Train',
                         iconData: Icons.train_sharp,
@@ -279,7 +282,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                         },
                       ),
                       CustomIconButton(
-                        Iconcolor: Colors.deepPurple,
+                        Iconcolor: darkTheme? Colors.amber.shade400:Colors.blue,
                         Containercolor:bgcolorScreen,
                         text: 'Bus',
                         iconData: Icons.directions_bus_outlined,
@@ -297,7 +300,7 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.white70,
+                  color: darkTheme? Colors.black87:Colors.white70,
                 ),
                 height: 180,
                 child: Padding(
@@ -308,8 +311,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                         crossAxisSpacing: 5,
                         children: [
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Hotel',
                             iconData: Icons.hotel_class,
                             onPressed: () {
@@ -317,8 +320,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                             },
                           ),
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Flight',
                             iconData: Icons.flight_outlined,
                             onPressed: () {
@@ -326,8 +329,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                             },
                           ),
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Train',
                             iconData: Icons.train_sharp,
                             onPressed: () {
@@ -335,8 +338,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                             },
                           ),
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Bus',
                             iconData: Icons.directions_bus_outlined,
                             onPressed: () {
@@ -344,8 +347,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                             },
                           ),
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Cab',
                             iconData: Icons.car_rental,
                             onPressed: () {
@@ -353,8 +356,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                             },
                           ),
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Bike Rental',
                             iconData: Icons.motorcycle,
                             onPressed: () {
@@ -363,8 +366,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                           ),
 
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Homestays',
                             iconData: Icons.home,
                             onPressed: () {
@@ -372,8 +375,8 @@ late MediaQueryData mediaQueryData = MediaQuery.of(context);
                             },
                           ),
                           CustomIconButton(
-                            Iconcolor:Colors.white ,
-                            Containercolor: Colors.deepPurple,
+                            Iconcolor:darkTheme? Colors.black87:Colors.white,
+                            Containercolor: darkTheme?Colors.amber.shade400:Colors.blue,
                             text: 'Map',
                             iconData: Icons.location_on_outlined,
                             onPressed: () {

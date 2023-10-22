@@ -7,13 +7,15 @@ class UserNotification extends StatefulWidget{
 }
 
 class _UserNotificationState extends State<UserNotification> {
+
   @override
   Widget build(BuildContext context) {
+    bool darkTheme = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Container(
         height: 70,
-        width: 82,
+        width: 70,
         child: InkWell(
           child: Padding(
             padding: const EdgeInsets.all(3.0),
@@ -27,12 +29,12 @@ class _UserNotificationState extends State<UserNotification> {
                     Icons.notification_important_rounded,
                     // Replace with your desired icon
                     size: 30, // Adjust the icon size as needed
-                    color: Colors.black, // Icon color
+                    color:  darkTheme ? Colors.amber.shade400:Colors.black, // Icon color
                   ),
 
                 ),
                 SizedBox(height: 1,),
-                Text('Notification'),
+                Text('Notification',style: TextStyle(fontSize: 12,color:Colors.black),),
               ],
             ),
           ),
