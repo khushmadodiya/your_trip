@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:temp/Account/ProfileContainer.dart';
 import 'package:temp/Account/UserSection.dart';
+import 'package:temp/Account/language.dart';
 import 'package:temp/main.dart';
 import 'package:temp/theme.dart';
+import '../Globle/globle.dart';
 import 'ResisterAndSignin.dart';
 
 class Account extends StatefulWidget{
@@ -26,7 +29,7 @@ class _AccountState extends State<Account> {
              width: 260,
              height: double.infinity,
              child: Scaffold(
-               appBar: AppBar(title: Text("profile"),backgroundColor: darkTheme?Colors.amber.shade400:Colors.blue,),
+               appBar: AppBar(title: Text( langs ?"profile":'प्रोफाइल'),backgroundColor: darkTheme?Colors.amber.shade400:Colors.blue,),
                body: Container(
                  height: double.infinity,
                  width: double.infinity,
@@ -60,7 +63,7 @@ class _AccountState extends State<Account> {
                                     child: Icon( Icons.sports_esports,size: 35,),
                                   ),
                                   SizedBox(width: 20,),
-                                  Text('Coupon Lounge',style: TextStyle(color: Colors.black,fontSize: 15),),
+                                  Text(langs ? 'Coupon Lounge': 'कूपन लैंग्वेज',style: TextStyle(color: Colors.black,fontSize: 15),),
                                   SizedBox(width: 30,),
                                   Icon(Icons.chevron_right_outlined,color: darkTheme ? Colors.amber.shade400:Colors.blue)
 
@@ -78,20 +81,20 @@ class _AccountState extends State<Account> {
                                // mainAxisAlignment: MainAxisAlignment.s,
                                children: [
                                  SizedBox(height: 10,),
-                                 Text('My Trips',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
+                                 Text(langs ? 'My Trips': 'माई ट्रिप',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
                                  SizedBox(height: 10,),
                                  ProfilContainer(
                                    width: 240,
                                    height: 35,
                                    colors: darkTheme?Colors.amber.shade400:Colors.blue,
-                                   child: Center(child: Text("View/Manage Trip",style: TextStyle(fontSize: 15,color:darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
+                                   child: Center(child: Text(langs ? "View/Manage Trip": 'व्यू /मैनेज ट्रिप',style: TextStyle(fontSize: 15,color:darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
                                  ),
                                  SizedBox(height: 5,),
                                  ProfilContainer(
                                    width: 240,
                                    height: 35,
                                    colors: darkTheme?Colors.amber.shade400:Colors.blue,
-                                   child: Center(child: Text("Wishlist",style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87 :Colors.white,fontWeight: FontWeight.w400),)),
+                                   child: Center(child: Text(langs ? "Wishlist": 'विशलिस्ट',style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87 :Colors.white,fontWeight: FontWeight.w400),)),
 
                                  ),
                                ],
@@ -105,20 +108,20 @@ class _AccountState extends State<Account> {
                              // mainAxisAlignment: MainAxisAlignment.s,
                              children: [
                                SizedBox(height: 10,),
-                               Text('Rewards',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
+                               Text(langs ? 'Rewards': "रिवार्ड्स",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
                                SizedBox(height: 10,),
                                ProfilContainer(
                                  width: 240,
                                  height: 35,
                                  colors:darkTheme?Colors.amber.shade400:Colors.blue,
-                                 child: Center(child: Text("Gift Cards",style: TextStyle(fontSize: 15,color:darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
+                                 child: Center(child: Text(langs ? "Gift Cards":"गिफ्ट कार्ड्स",style: TextStyle(fontSize: 15,color:darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
                                ),
                                SizedBox(height: 5,),
                                ProfilContainer(
                                  width: 240,
                                  height: 35,
                                  colors:darkTheme?Colors.amber.shade400:Colors.blue,
-                                 child: Center(child: Text("Rwards",style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
+                                 child: Center(child: Text(langs ? "Rrewards":"रिवार्ड्स",style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
 
                                ),
                                SizedBox(height: 5,),
@@ -126,7 +129,7 @@ class _AccountState extends State<Account> {
                                  width: 240,
                                  height: 35,
                                  colors: darkTheme?Colors.amber.shade400:Colors.blue,
-                                 child: Center(child: Text("Refer & Earn",style: TextStyle(fontSize: 15,color:darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
+                                 child: Center(child: Text(langs ? "Refer & Earn": "रेफर & अर्न",style: TextStyle(fontSize: 15,color:darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
 
                                ),
                              ],
@@ -140,21 +143,27 @@ class _AccountState extends State<Account> {
                              // mainAxisAlignment: MainAxisAlignment.s,
                              children: [
                                SizedBox(height: 10,),
-                               Text('Setting',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
+                               Text(langs ? '0Setting': "सेटिंग",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
                                SizedBox(height: 10,),
                                ProfilContainer(
                                  width: 240,
                                  height: 35,
                                  colors: darkTheme?Colors.amber.shade400:Colors.blue,
-                                 child: Center(child: Text("Language",style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
+                                 child: Center(child: Text(langs ? "Language": "भाषा",style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
+                                 onTap: (){
+                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>lang()));
+                                 },
                                ),
                                SizedBox(height: 5,),
                                ProfilContainer(
                                  width: 240,
                                  height: 35,
                                  colors:darkTheme?Colors.amber.shade400:Colors.blue,
-                                 child: Center(child: Text("Country",style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
-
+                                 child: Center(child: Text(langs ? "Country": "देश",style: TextStyle(fontSize: 15,color: darkTheme ?Colors.black87:Colors.white,fontWeight: FontWeight.w400),)),
+                                 onTap: (){
+                                   setState(() {
+                                   });
+                                 },
                                ),
                              ],
                            ),

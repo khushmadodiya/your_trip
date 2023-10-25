@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class Buses extends StatefulWidget {
-  const Buses({Key? key}) : super(key: key);
+class offers extends StatefulWidget {
+  const offers({Key? key}) : super(key: key);
 
   @override
-  State<Buses> createState() => _BusesState();
+  State<offers> createState() => _offersState();
 }
 
-class _BusesState extends State<Buses> {
+class _offersState extends State<offers> {
 
   double _progress = 0;
   late InAppWebViewController  inAppWebViewController;
@@ -33,7 +33,7 @@ class _BusesState extends State<Buses> {
             children: [
               InAppWebView(
                 initialUrlRequest: URLRequest(
-                    url: Uri.parse("https://www.redbus.in/buses/indore-bus-tickets")
+                    url: Uri.parse("https://www.makemytrip.com/offers/")
                 ),
                 onWebViewCreated: (InAppWebViewController controller){
                   inAppWebViewController = controller;

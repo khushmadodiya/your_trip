@@ -33,7 +33,7 @@ class _BikeRentalState extends State<BikeRental> {
             children: [
               InAppWebView(
                 initialUrlRequest: URLRequest(
-                    url: Uri.parse("https://www.olacabs.com/")
+                    url: Uri.parse("https://www.rapido.rentals/")
                 ),
                 onWebViewCreated: (InAppWebViewController controller){
                   inAppWebViewController = controller;

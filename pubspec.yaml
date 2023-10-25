@@ -48,6 +48,8 @@ dependencies:
   firebase_database: ^10.3.1
   email_validator: ^2.1.17
   intl_phone_field: ^3.2.0
+  dialog_flowtter: ^0.3.3
+
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
+    - assets/
 
 
   # The following line ensures that the Material Icons font is

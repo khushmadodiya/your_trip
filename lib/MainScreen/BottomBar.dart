@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Globle/globle.dart';
+
 class CustomGradientBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
@@ -14,21 +16,21 @@ class CustomGradientBottomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: currentIndex,
       onTap: onTap,
-      items: const [
+      items:  [
         BottomNavigationBarItem(
           icon: Icon(Icons.home), // Customize icon color
-          label: 'Home',
+          label: langs ? 'Home' : 'होम',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_bag), // Customize icon color
-          label: 'MYTrip',
+          icon: Icon(Icons.chat), // Customize icon color
+          label: langs ? 'ChatBot':'चैटबॉट',
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.monetization_on_outlined,
+            Icons.person,
 
           ), // Customize icon color
-          label: 'TripMoney',
+          label: langs ? 'storys': 'स्टोरीज',
         ),
         // Add more BottomNavigationBarItems as needed
       ],

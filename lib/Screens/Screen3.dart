@@ -1,15 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class Buses extends StatefulWidget {
-  const Buses({Key? key}) : super(key: key);
-
+class Screen3  extends StatefulWidget{
   @override
-  State<Buses> createState() => _BusesState();
+  State<Screen3> createState() => _Screen3State();
 }
 
-class _BusesState extends State<Buses> {
-
+class _Screen3State extends State<Screen3> {
   double _progress = 0;
   late InAppWebViewController  inAppWebViewController;
 
@@ -33,7 +31,7 @@ class _BusesState extends State<Buses> {
             children: [
               InAppWebView(
                 initialUrlRequest: URLRequest(
-                    url: Uri.parse("https://www.redbus.in/buses/indore-bus-tickets")
+                    url: Uri.parse("https://bard.google.com/chat?hl=en-IN")
                 ),
                 onWebViewCreated: (InAppWebViewController controller){
                   inAppWebViewController = controller;

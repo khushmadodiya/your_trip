@@ -1,30 +1,78 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-//
 
+import 'package:dialog_flowtter/dialog_flowtter.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import 'message.dart';
 
 class ChatBot extends StatefulWidget {
-
   @override
-  State<ChatBot> createState() => _ChatBotState();
+  _ChatBotState createState() => _ChatBotState();
 }
 
 class _ChatBotState extends State<ChatBot> {
-
+  late DialogFlowtter dialogFlowtter;
+  final TextEditingController _controller =TextEditingController();
+  List<Map<String,dynamic>> messages =[];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    DialogFlowtter.fromFile().then((value) => dialogFlowtter=value);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
-          title: Center(child: Text("Your Trip")),
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(child: MessagesScreen(messages: messages)),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+              child: Row(
+                children: [
+                  Expanded(
+                      child: TextField(
+                        controller: _controller,
+                        style: TextStyle(color: Colors.black),
+                      )),
+                  IconButton(
+                      onPressed: () {
+                        sendMessage(_controller.text);
+                        _controller.clear();
+                      },
+                      icon: Icon(Icons.send))
+                ],
+              ),
+            )
+          ],
         ),
-        body: Container(
-
-          child:InAppWebView(
-            initialUrlRequest: URLRequest(url: Uri.parse("https://chat.openai.com/c/ec175586-21b7-44e2-b25b-2fff83479ebc")),
-          ),
-        ) // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
+  }
+
+  sendMessage(String text) async {
+    if (text.isEmpty) {
+      print('Message is empty');
+      setState(() {
+
+      });
+    } else {
+      setState(() {
+        addMessage(Message(text: DialogText(text: [text])), true);
+      });
+
+      DetectIntentResponse response = await dialogFlowtter.detectIntent(
+          queryInput: QueryInput(text: TextInput(text: text)));
+      if (response.message == null) return;
+      setState(() {
+        addMessage(response.message!);
+      });
+    }
+  }
+
+  addMessage(Message message, [bool isUserMessage = false]) {
+    messages.add({'message': message, 'isUserMessage': isUserMessage});
   }
 }
