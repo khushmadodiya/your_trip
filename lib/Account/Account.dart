@@ -25,7 +25,7 @@ class _AccountState extends State<Account> {
          MyHomePage(),
          Padding(
            padding: const EdgeInsets.only(top: 0,left: 0,bottom: 0),
-           child: Container(
+           child: SizedBox(
              width: 260,
              height: double.infinity,
              child: Scaffold(
