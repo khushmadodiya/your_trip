@@ -143,7 +143,7 @@ class _AccountState extends State<Account> {
                              // mainAxisAlignment: MainAxisAlignment.s,
                              children: [
                                SizedBox(height: 10,),
-                               Text(langs ? '0Setting': "सेटिंग",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
+                               Text(langs ? 'Setting': "सेटिंग",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),),
                                SizedBox(height: 10,),
                                ProfilContainer(
                                  width: 240,

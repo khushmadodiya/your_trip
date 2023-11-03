@@ -34,7 +34,7 @@ class _Screen1State extends State<Screen1> {
       flags: const YoutubePlayerFlags(
           hideControls: true,
           controlsVisibleAtStart: false,
-          autoPlay: false,
+          autoPlay: true,
           mute: true,
           // isLive :true,
           hideThumbnail: false,
@@ -53,7 +53,7 @@ class _Screen1State extends State<Screen1> {
     return Container(
       color: bgcolorScreen,
       width: double.infinity,
-      height: 400,
+      height: 100,
       child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -68,7 +68,7 @@ class _Screen1State extends State<Screen1> {
                   controller: _controller,
                   showVideoProgressIndicator: true,
 
-                  aspectRatio: 16/10,
+                  aspectRatio: 20/10,
 
                 ),
               ),
@@ -221,9 +221,11 @@ class _Screen1State extends State<Screen1> {
                         ]
                     )
                 ),
-              )
+              ),
+
             ],
-          )),
+          )
+      ),
     );
   }
 }

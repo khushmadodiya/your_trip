@@ -7,14 +7,6 @@ import 'package:temp/MainScreen/splesh_screen.dart';
 import 'package:temp/Map/MapHomepage.dart';
 import 'package:temp/chatbot/chatbot.dart';
 import 'package:temp/theme.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'Booking/BikeRental/BikeRentalHomepage.dart';
-import 'Booking/Buses/BusHomepage.dart';
-import 'Booking/Cab/cabHomepage.dart';
-import 'Booking/HomeStays/HomestaysHomepage.dart';
-import 'Booking/Train/TrainHomepage.dart';
-import 'Booking/flite/fliteHomepage.dart';
-import 'Booking/hotels/hotelsHomepage.dart';
 import 'Globle/globle.dart';
 import 'MainScreen/BottomBar.dart';
 import 'MainScreen/CusttomButton.dart';
@@ -28,9 +20,6 @@ final bgcolorScreen = Colors.deepPurple.shade50;
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp( options: DefaultFirebaseOptions.currentPlatform,);
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    // statusBarColor: Colors.white,
-  ));
   runApp(const MyApp());
 }
 
